@@ -1,0 +1,54 @@
+#include<stdio.h>
+#include<conio.h>
+int max[100][100];
+int alloc[100][100];
+int need[100][100];
+int avail[100];
+int n,r;
+void input();
+void show();
+void cal();
+int main()
+{
+int i,j;
+printf("********** Banker's Algo ************\n");
+input();
+show();
+cal();
+getch();
+return 0;
+}
+void input()
+{
+int i,j;
+printf("Enter the no of Processes:\t");
+scanf("%d",&n);
+printf("Enter the no of resources instances:\t");
+scanf("%d",&r);
+printf("Enter the Max Matrix:\n");
+for(i=0;i<n;i++)
+{
+for(j=0;j<r;j++)
+{
+scanf("%d",&max[i][j]);
+}
+}
+printf("Enter the Allocation Matrix\n");
+for(i=0;i<n;i++)
+{
+for(j=0;j<r;j++)
+{
+scanf("%d",&alloc[i][j]);
+}
+
+}
+printf("Enter the available Resources\n");
+for(j=0;j<r;j++)
+{
+scanf("%d",&avail[j]);
+}
+}
+void show()
+{
+int i,j;
+printf("Process\t Allocation\t Max\t Available\t");
